@@ -11,8 +11,6 @@ Utilizei a linguagem **SQL (SQLite)** para realizar o tratamento, limpeza e unif
 - **Deduplicação de Registros:** Uso de funções de agrupamento (`GROUP BY`) e consolidação para sanear as métricas de peso bruto real e faturamento, eliminando registros duplicados indesejados.
 - **Modelagem Dimensional de Tempo (Calendário):** Criação e alimentação de uma tabela dimensão de calendário (`dim_calendario`) e aplicação de filtros condicionais (`WHERE`) para isolar exclusivamente dias úteis operacionais (Segunda a Sexta-feira), desconsiderando finais de semana para métricas de conformidade de prazos (SLA).
 
-## 📄 Scripts SQL Utilizados
-Os códigos estruturados deste projeto estão documentados e disponíveis para consulta nesta pasta.
 
 ---
 
@@ -28,11 +26,10 @@ Nesta segunda etapa do projeto, expandi o escopo para incluir a gestão completa
 
 ### 📊 Scripts SQL Desenvolvidos neste Módulo:
 
-```sql
--- [Adicione aqui os seus códigos favoritos que fizemos hoje, como a View final ou o INSERT SELECT!]
-```
+### 📊 Scripts SQL Desenvolvidos neste Módulo:
 
--- COLE O SEU CODIGO SQL BEM AQUI EMBAIXO DA LINHA 35/36
+```sql
+-- Criando uma View analítica com o seu relatório estruturado por Mês/Ano
 SELECT
     (SUBSTR(data_emiss_o, 7, 4) || '-' || SUBSTR(data_emiss_o, 4, 2)) AS "Mês / Ano",
     COUNT(*) AS "Total de Viagens no Mês",
@@ -44,3 +41,4 @@ GROUP BY
     SUBSTR(data_emiss_o, 4, 2)
 ORDER BY 
     "Mês / Ano" DESC;
+```
