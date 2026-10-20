@@ -26,7 +26,6 @@ Nesta segunda etapa do projeto, expandi o escopo para incluir a gestão completa
 
 ### 📊 Scripts SQL Desenvolvidos neste Módulo:
 
-### 📊 Scripts SQL Desenvolvidos neste Módulo:
 
 ```sql
 -- Criando uma View analítica com o seu relatório estruturado por Mês/Ano
